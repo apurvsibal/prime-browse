@@ -1,11 +1,6 @@
 # Prime Browse
 
-I'd like to find movies to watch from Amazon Prime Instant Video, but I hate
-the Amazon UI.  It's cluttered with videos that aren't Prime eligible, shows
-only a few covers at a time without any useful metadata, and doesn't provide
-useful ways to filter results.  I wrote some scripts to scrape the data from
-Amazon's website, put it into an Elasticsearch server, and make it browse-able
-with a simple web front end.
+I'd like to find best movies on amazon prime, but I hate that most of the titles listed in top articles are not available in India.  It's cluttered with videos that aren't Prime eligible, shows only a few covers at a time without any useful metadata, and doesn't provide useful ways to filter results.  I am forking a project from kielni with some scripts to scrape the data from Amazon's website, put it into an Elasticsearch server, and make it browse-able with a simple web front end.
 
 ![screenshot](https://raw.githubusercontent.com/kielni/prime-browse/master/img/screenshot.png "Screenshot")
 
