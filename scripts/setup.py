@@ -20,5 +20,8 @@ mapping = {
         }
     }
 }
-print es.put_mapping("prime", "video", mapping)
+#print(es.info)
+#print(help(es.put_mapping))
+print (es.put_mapping("prime", "video", mapping))
+#print( es.indices.create(index='prime', ignore=400, body=mapping) )
 

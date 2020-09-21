@@ -23,10 +23,10 @@ def get_html(outf, driver):
     m = 0
     # TODO: get content html and parse with bs4
     # to avoid StaleElementException while iterating
-    print "starting get_html"
+    print ("starting get_html")
     for prod in driver.find_elements_by_class_name("prod"):
         if prod.get_attribute("innerHTML"):
-            print "\tprod %i" % m
+            print ("\tprod %i" % m)
             outf.write("<!--- %i -->\n" % m)
             data = prod.get_attribute("innerHTML")
             outf.write(data)
@@ -54,7 +54,7 @@ def get_html(outf, driver):
                 "title" : title,
                 "year" : year
             }
-            print es.index("prime", "movie", doc, id=mid)
+            print (es.index("prime", "movie", doc, id=mid))
             m += 1
 
 driver = webdriver.Firefox()
@@ -63,23 +63,23 @@ driver.get(url)
 
 out = codecs.open("out.html", "w", "utf-8")
 for i in range(100):
-    print "start %i" % i
+    print ("start %i" % i)
     el = driver.find_element_by_id("pagnNextLink")
     y = el.location["y"]
-    print "found pagenNextLink y=%i" % y
+    print ("found pagenNextLink y=%i" % y)
     scroll = "scroll(0," + str(y) + ")"
     driver.execute_script(scroll)
-    print "scrolled"
+    print ("scrolled")
     out.write("<!--- page %i --->\n" % i)
     get_html(out, driver)
-    print "got html"
+    print ("got html")
     # random delay
     time.sleep(1+random.random()*4)
     el = driver.find_element_by_id("pagnNextLink")
-    print "found pagnNextLink again"
+    print ("found pagnNextLink again")
     el.click()
     time.sleep(2)
-    print "done click"
+    print ("done click")
 
 #print "\n\n%s" % data
 out.close()
